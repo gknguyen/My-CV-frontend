@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     cardHeader: {
       marginTop: -140,
+      marginBottom: -70,
       paddingLeft: 90,
       paddingRight: 90,
-      borderBottom: '1px solid black',
     },
     avatar: {
       width: theme.spacing(25),
@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 40,
     },
     printButton: {
+      borderBottom: '1px solid black',
       padding: 10,
       color: '#eeeeee',
     },
@@ -55,6 +56,7 @@ const Details: React.FC = () => {
     <Container disableGutters>
       <Card raised>
         <CardMedia className={classes.media} image="/background.jpg" />
+
         <CardHeader
           className={classes.cardHeader}
           avatar={<Avatar src="/cool.jpg" className={classes.avatar} />}
@@ -63,6 +65,13 @@ const Details: React.FC = () => {
           subheader="Full-stack Developer (Node.js, React.js, AWS)"
           subheaderTypographyProps={{ variant: 'h5' }}
         />
+
+        <Grid container justify="flex-end" className={classes.printButton}>
+          <IconButton>
+            <SaveAltIcon fontSize="large" />
+          </IconButton>
+        </Grid>
+
         <CardContent>
           <Grid container>
             <Grid container item xs={4} className={classes.personalInfo} direction="column">
@@ -87,12 +96,6 @@ const Details: React.FC = () => {
           </Grid>
         </CardContent>
       </Card>
-
-      <Grid container justify="flex-end" className={classes.printButton}>
-        <IconButton color="inherit">
-          <SaveAltIcon fontSize="large" />
-        </IconButton>
-      </Grid>
     </Container>
   );
 };
