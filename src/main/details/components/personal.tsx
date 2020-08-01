@@ -1,29 +1,75 @@
-import { Box, Typography } from '@material-ui/core';
+import { Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import FaceIcon from '@material-ui/icons/Face';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import SchoolIcon from '@material-ui/icons/School';
+import TodayIcon from '@material-ui/icons/Today';
+import moment from 'moment';
 import React from 'react';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      color: '#eeeeee',
       padding: 30,
+    },
+    avatarColor: {
+      backgroundColor: '#546e7a',
     },
   }),
 );
 
 const Personal: React.FC = () => {
   const classes = useStyles();
+  const date = moment('1995/11/17').format('LL');
 
   return (
     <Box className={classes.root}>
       <Typography variant="h5" component="h2" display="block" gutterBottom>
-        <strong>ABOUT</strong>
+        <strong>PERSONAL INFORMATIONS</strong>
       </Typography>
-      <Box component="span">
-        My career path is to become a Full-stack programmer. I look forward to learning and working with new
-        technologies in the current 4.0 generation economy, practicing my skills so I can adapt well to the needs and
-        flexible changes of the market. It would be great if I had the opportunity to work in an environment where
-        English is the key because I want to train my ability to communicate and work in English.
-      </Box>
+
+      <List>
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.avatarColor}>
+              <TodayIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary={date} />
+        </ListItem>
+
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.avatarColor}>
+              <FaceIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="Male" />
+        </ListItem>
+
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.avatarColor}>
+              <LocationOnIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="Go Vap District, HCMC" />
+        </ListItem>
+
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.avatarColor}>
+              <SchoolIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText
+            primary="International UniverSity - HCMC"
+            secondary="Electrical Engineering (GPA: 2.8/4.0)"
+            secondaryTypographyProps={{ color: 'inherit' }}
+          />
+        </ListItem>
+      </List>
     </Box>
   );
 };

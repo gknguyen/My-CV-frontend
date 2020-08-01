@@ -5,12 +5,16 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import React from 'react';
+import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       color: '#eeeeee',
       padding: 30,
+    },
+    avatarColor: {
+      backgroundColor: '#546e7a',
     },
   }),
 );
@@ -22,12 +26,31 @@ const Contact: React.FC = () => {
   return (
     <Box className={classes.root}>
       <Typography variant="h5" component="h2" display="block" gutterBottom>
-        <strong>CONTACT</strong>
+        <strong>CONTACTS</strong>
       </Typography>
+
       <List>
         <ListItem>
           <ListItemAvatar>
-            <Avatar>
+            <Avatar className={classes.avatarColor}>
+              <PhoneIphoneIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="0978205130" />
+        </ListItem>
+
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.avatarColor}>
+              <EmailIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="nguyentruonggiang1711@gmail.com" />
+        </ListItem>
+
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.avatarColor}>
               <FacebookIcon />
             </Avatar>
           </ListItemAvatar>
@@ -42,7 +65,7 @@ const Contact: React.FC = () => {
 
         <ListItem>
           <ListItemAvatar>
-            <Avatar>
+            <Avatar className={classes.avatarColor}>
               <LinkedInIcon />
             </Avatar>
           </ListItemAvatar>
@@ -57,7 +80,7 @@ const Contact: React.FC = () => {
 
         <ListItem>
           <ListItemAvatar>
-            <Avatar>
+            <Avatar className={classes.avatarColor}>
               <GitHubIcon />
             </Avatar>
           </ListItemAvatar>
@@ -68,15 +91,6 @@ const Contact: React.FC = () => {
               </Link>
             }
           />
-        </ListItem>
-
-        <ListItem>
-          <ListItemAvatar>
-            <Avatar>
-              <EmailIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="nguyentruonggiang1711@gmail.com" />
         </ListItem>
       </List>
     </Box>
