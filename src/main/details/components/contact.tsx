@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Contact: React.FC = () => {
   const classes = useStyles();
-  const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
   return (
     <Box className={classes.root}>
@@ -57,7 +56,7 @@ const Contact: React.FC = () => {
           <ListItemText
             primary={
               <Link href="https://www.facebook.com/gknguyen1711" target="_blank" color="inherit">
-                https://www.facebook.com/gknguyen1711
+                facebook.com/gknguyen1711
               </Link>
             }
           />
@@ -72,7 +71,7 @@ const Contact: React.FC = () => {
           <ListItemText
             primary={
               <Link href="https://www.linkedin.com/in/gknguyen1711" target="_blank" color="inherit">
-                https://www.linkedin.com/in/gknguyen1711
+                linkedin.com/in/gknguyen1711
               </Link>
             }
           />
@@ -86,8 +85,8 @@ const Contact: React.FC = () => {
           </ListItemAvatar>
           <ListItemText
             primary={
-              <Link href="https://github.com/gknguyen" target="_blank" color="inherit">
-                https://github.com/gknguyen
+              <Link href="https://www.github.com/gknguyen" target="_blank" color="inherit">
+                github.com/gknguyen
               </Link>
             }
           />

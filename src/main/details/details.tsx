@@ -1,7 +1,8 @@
-import { Avatar, Card, CardContent, CardHeader, CardMedia, Container, Grid } from '@material-ui/core';
+import { Avatar, Card, CardContent, CardHeader, CardMedia, Container, Grid, Link } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import { savePDF } from '@progress/kendo-react-pdf';
 import React from 'react';
 import About from './components/about';
 import Contact from './components/contact';
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     media: {
       height: 0,
-      paddingTop: '12%',
+      paddingTop: 160,
     },
     cardHeader: {
       marginTop: -140,
@@ -52,9 +53,23 @@ const useStyles = makeStyles((theme: Theme) =>
 const Details: React.FC = () => {
   const classes = useStyles();
 
+  const exportPDFWithMethod = () => {
+    const input = document.getElementById('detail');
+    if (input) {
+      savePDF(input, {
+        fileName: `My-CV`,
+        author: 'Nguyen Truong Giang',
+        creator: 'Nguyen Truong Giang',
+        producer: 'Nguyen Truong Giang',
+        avoidLinks: true,
+        paperSize: 'auto',
+      });
+    }
+  };
+
   return (
     <Container disableGutters>
-      <Card raised>
+      <Card raised id="detail">
         <CardMedia className={classes.media} image="/background.jpg" />
 
         <CardHeader
@@ -67,7 +82,7 @@ const Details: React.FC = () => {
         />
 
         <Grid container justify="flex-end" className={classes.printButton}>
-          <IconButton>
+          <IconButton onClick={exportPDFWithMethod}>
             <SaveAltIcon fontSize="large" />
           </IconButton>
         </Grid>
@@ -75,7 +90,7 @@ const Details: React.FC = () => {
         <CardContent>
           <Grid container>
             <Grid container item xs={4} className={classes.personalInfo} direction="column">
-              <Container disableGutters>
+              <Container disableGutters style={{ wordBreak: 'break-all' }}>
                 <Personal />
                 <Contact />
                 <Skill />
@@ -91,7 +106,10 @@ const Details: React.FC = () => {
             </Grid>
 
             <Grid container item xs={12} className={classes.cardFooter} justify="center" alignItems="center">
-              Powered by @Material-UI
+              Powered by{' '}
+              <Link href="https://material-ui.com" target="_blank" color="inherit">
+                @Material-UI
+              </Link>
             </Grid>
           </Grid>
         </CardContent>
