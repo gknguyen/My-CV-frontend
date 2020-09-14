@@ -22,7 +22,7 @@ const About: React.FC = () => {
         <strong>ABOUT</strong>
       </Typography>
       <Box component="span" className={classes.lineBreak}>
-        My career path is to become a expert in Full-stack programmer.
+        My career path is to become an expert Full-stack programmer.
         <br />
         I look forward to learning and working with the new technologies in the current 4.0 generation economy,
         practicing my skills so I can adapt well to the needs and flexible changes of the market.

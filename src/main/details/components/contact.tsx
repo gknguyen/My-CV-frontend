@@ -6,6 +6,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import React from 'react';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
+import MessageIcon from '@material-ui/icons/Message';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -45,6 +46,15 @@ const Contact: React.FC = () => {
             </Avatar>
           </ListItemAvatar>
           <ListItemText primary="nguyentruonggiang1711@gmail.com" />
+        </ListItem>
+
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.avatarColor}>
+              <MessageIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="live:nguyentruonggiang1711" />
         </ListItem>
 
         <ListItem>

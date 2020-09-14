@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const columnData = [
-  { title: <strong>PRIOD</strong>, field: 'priod', width: 300 },
-  { title: <strong>PROJECTS</strong>, field: 'projects', width: 1000 },
+  { title: <strong>PRIOD</strong>, field: 'priod', width: 300, sorting: true },
+  { title: <strong>PROJECTS</strong>, field: 'projects', width: 1000, sorting: false },
 ];
 
 const rowData = [
@@ -83,7 +83,7 @@ const rowData = [
         <Typography component="span">
           Personal project
           <ul>
-            <li>Based on Javascript language with React.js framework</li>
+            <li>Based on Typescript language with React.js framework</li>
           </ul>
         </Typography>
       </Box>

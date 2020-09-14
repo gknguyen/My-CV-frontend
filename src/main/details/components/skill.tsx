@@ -8,6 +8,9 @@ import StorageIcon from '@material-ui/icons/Storage';
 import React from 'react';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import SettingsIcon from '@material-ui/icons/Settings';
+import CodeIcon from '@material-ui/icons/Code';
+import BuildIcon from '@material-ui/icons/Build';
+import GTranslateIcon from '@material-ui/icons/GTranslate';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,6 +46,60 @@ const Skill: React.FC = () => {
 
       <ListItem button onClick={handleClick} className={classes.list}>
         <ListItemIcon>
+          <GTranslateIcon className={classes.icon} fontSize="large" />
+        </ListItemIcon>
+        <ListItemText primary="Languages" />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="English (IELTS 6.5)" />
+          </ListItem>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="French (DELF A2)" />
+          </ListItem>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Japan (beginner)" />
+          </ListItem>
+        </List>
+      </Collapse>
+
+      <ListItem button onClick={handleClick} className={classes.list}>
+        <ListItemIcon>
+          <CodeIcon className={classes.icon} fontSize="large" />
+        </ListItemIcon>
+        <ListItemText primary="Programming Languages" />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Javascript, Typescript" />
+          </ListItem>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Cobol, Java, PHP" />
+          </ListItem>
+        </List>
+      </Collapse>
+
+      <ListItem button onClick={handleClick} className={classes.list}>
+        <ListItemIcon>
           <StorageIcon className={classes.icon} fontSize="large" />
         </ListItemIcon>
         <ListItemText primary="Back-end" />
@@ -66,7 +123,13 @@ const Skill: React.FC = () => {
             <ListItemIcon>
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
-            <ListItemText primary="PHP, Laravel" />
+            <ListItemText primary="OOP, Spring boot, Laravel" />
+          </ListItem>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Redis" />
           </ListItem>
         </List>
       </Collapse>
@@ -97,6 +160,24 @@ const Skill: React.FC = () => {
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
             <ListItemText primary="Material-UI, Material-table" />
+          </ListItem>
+        </List>
+      </Collapse>
+
+      <ListItem button onClick={handleClick} className={classes.list}>
+        <ListItemIcon>
+          <BuildIcon className={classes.icon} fontSize="large" />
+        </ListItemIcon>
+        <ListItemText primary="Testing" />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Mocha, Chai" />
           </ListItem>
         </List>
       </Collapse>
@@ -139,6 +220,12 @@ const Skill: React.FC = () => {
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
             <ListItemText primary="REST API, Postman API," />
+          </ListItem>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Google API (Drive, Directory)" />
           </ListItem>
           <ListItem className={classes.nested}>
             <ListItemIcon>

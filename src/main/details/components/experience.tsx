@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const columnData = [
-  { title: <strong>PRIOD</strong>, field: 'priod', width: 300 },
-  { title: <strong>COMPANIES</strong>, field: 'companies', width: 1000 },
+  { title: <strong>PRIOD</strong>, field: 'priod', width: 300, sorting: true },
+  { title: <strong>COMPANIES</strong>, field: 'companies', width: 1000, sorting: false },
 ];
 
 const rowData = [
@@ -66,7 +66,7 @@ const rowData = [
             <li>Working with AWS services (EC2, S3)</li>
             <li>Communicating in Japan with co-workers and clients</li>
             <li>
-              <b>Project management system</b> project (node.js, react.js)
+              <b>Project management system</b> project (Node.js, React.js)
             </li>
           </ul>
         </Typography>

@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: -70,
       paddingLeft: 90,
       paddingRight: 90,
+      // marginTop: -150,
+      // marginBottom: 0,
+      // borderBottom: '1px solid black',
     },
     avatar: {
       width: theme.spacing(25),
@@ -74,7 +77,7 @@ const Details: React.FC = () => {
 
         <CardHeader
           className={classes.cardHeader}
-          avatar={<Avatar src="/cool.jpg" className={classes.avatar} />}
+          avatar={<Avatar src="/gk.jpg" className={classes.avatar} />}
           title="Nguyen Truong Giang"
           titleTypographyProps={{ variant: 'h4' }}
           subheader="Full-stack Developer (Node.js, React.js, AWS)"
