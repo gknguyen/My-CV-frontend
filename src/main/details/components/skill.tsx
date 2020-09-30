@@ -15,6 +15,7 @@ import GTranslateIcon from '@material-ui/icons/GTranslate';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      // marginTop: 310,
       color: '#eeeeee',
       padding: 30,
     },
@@ -186,7 +187,7 @@ const Skill: React.FC = () => {
         <ListItemIcon>
           <CloudUploadIcon className={classes.icon} fontSize="large" />
         </ListItemIcon>
-        <ListItemText primary="Cloud (AWS)" />
+        <ListItemText primary="Cloud" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
@@ -195,13 +196,13 @@ const Skill: React.FC = () => {
             <ListItemIcon>
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
-            <ListItemText primary="EC2, VPC, S3, IAM" />
+            <ListItemText primary="AWS (EC2, VPC, S3, IAM,   RDS)" />
           </ListItem>
           <ListItem className={classes.nested}>
             <ListItemIcon>
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
-            <ListItemText primary="Lambda, RDS, Route53" />
+            <ListItemText primary="Google (Drive, Directory)" />
           </ListItem>
         </List>
       </Collapse>
@@ -220,12 +221,6 @@ const Skill: React.FC = () => {
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
             <ListItemText primary="REST API, Postman API," />
-          </ListItem>
-          <ListItem className={classes.nested}>
-            <ListItemIcon>
-              <AddIcon className={classes.icon} fontSize="large" />
-            </ListItemIcon>
-            <ListItemText primary="Google API (Drive, Directory)" />
           </ListItem>
           <ListItem className={classes.nested}>
             <ListItemIcon>
