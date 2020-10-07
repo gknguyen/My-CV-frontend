@@ -48,6 +48,10 @@ const rowData = [
         <Typography component="span">
           Personal project
           <ul>
+            <li>
+              Have some features such as employees management, menu management, customer info management, add food to
+              cart and invoice receipts for customers, finance management
+            </li>
             <li>Based on Java language with Spring MVC framework</li>
             <li>Using Bootstrap to build web client</li>
             <li>Using MySQL for database</li>
@@ -66,6 +70,10 @@ const rowData = [
         <Typography component="span">
           Freelance project
           <ul>
+            <li>
+              An e-commercial web app which provides website templates for customers with many kinds of business aspect
+              such as food, clothes, electronic and enterprises.
+            </li>
             <li>Based on PHP language with Laravel MVC framework</li>
             <li>Using Bootstrap to build web client</li>
             <li>Using MySQL for database</li>
@@ -85,6 +93,8 @@ const rowData = [
           Personal project
           <ul>
             <li>Based on Typescript language with React.js framework</li>
+            <li>Use Material-UI for UI template</li>
+            <li>Public with AWS server</li>
           </ul>
         </Typography>
       </Box>

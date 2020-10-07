@@ -80,7 +80,7 @@ const Details: React.FC = () => {
           avatar={<Avatar src="/gk.jpg" className={classes.avatar} />}
           title="Nguyen Truong Giang"
           titleTypographyProps={{ variant: 'h4' }}
-          subheader="Full-stack Developer (Node.js, React.js, AWS)"
+          subheader="Software Engineer (Node.js, React.js, AWS)"
           subheaderTypographyProps={{ variant: 'h5' }}
         />
 

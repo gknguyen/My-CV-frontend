@@ -66,7 +66,8 @@ const rowData = [
             <li>Working with AWS services (EC2, S3)</li>
             <li>Communicating in Japan with co-workers and clients</li>
             <li>
-              <b>Project management system</b> project (Node.js, React.js)
+              <b>Project management system</b> project (Node.js, React.js): employees and team management, create
+              projects and assign teams to handle, documents are upload and manage using Google Drive API
             </li>
           </ul>
         </Typography>

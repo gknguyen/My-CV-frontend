@@ -15,9 +15,10 @@ import GTranslateIcon from '@material-ui/icons/GTranslate';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      // marginTop: 310,
+      // marginTop: 435,
       color: '#eeeeee',
       padding: 30,
+      // padding: '30px 20px',
     },
     list: {
       marginTop: 10,
@@ -148,7 +149,7 @@ const Skill: React.FC = () => {
             <ListItemIcon>
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
-            <ListItemText primary="HTML, CSS, Bootstrap" />
+            <ListItemText primary="HTML5, CSS3, Bootstrap 4" />
           </ListItem>
           <ListItem className={classes.nested}>
             <ListItemIcon>
@@ -178,7 +179,13 @@ const Skill: React.FC = () => {
             <ListItemIcon>
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
-            <ListItemText primary="Mocha, Chai" />
+            <ListItemText primary="Jest, Mocha, Chai" />
+          </ListItem>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Mochawesome report" />
           </ListItem>
         </List>
       </Collapse>

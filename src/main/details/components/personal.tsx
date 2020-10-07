@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       color: '#eeeeee',
       padding: 30,
+      // padding: '30px 20px',
     },
     avatarColor: {
       backgroundColor: '#546e7a',
