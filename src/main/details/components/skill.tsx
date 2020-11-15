@@ -187,6 +187,12 @@ const Skill: React.FC = () => {
             </ListItemIcon>
             <ListItemText primary="Mochawesome report" />
           </ListItem>
+          <ListItem className={classes.nested}>
+            <ListItemIcon>
+              <AddIcon className={classes.icon} fontSize="large" />
+            </ListItemIcon>
+            <ListItemText primary="Postman" />
+          </ListItem>
         </List>
       </Collapse>
 
@@ -203,7 +209,7 @@ const Skill: React.FC = () => {
             <ListItemIcon>
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
-            <ListItemText primary="AWS (EC2, VPC, S3, IAM,   RDS)" />
+            <ListItemText primary="AWS (EC2, VPC, S3, IAM, RDS)" />
           </ListItem>
           <ListItem className={classes.nested}>
             <ListItemIcon>
@@ -227,7 +233,7 @@ const Skill: React.FC = () => {
             <ListItemIcon>
               <AddIcon className={classes.icon} fontSize="large" />
             </ListItemIcon>
-            <ListItemText primary="REST API, Postman API," />
+            <ListItemText primary="REST API" />
           </ListItem>
           <ListItem className={classes.nested}>
             <ListItemIcon>
