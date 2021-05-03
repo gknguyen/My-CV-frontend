@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
-import { Provider as StoreProvider } from 'react-redux';
-import Details from '../main/details/details';
-import configureStore from '../redux/configureStore';
-import './App.scss';
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from './themes';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
+import { createStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import React from 'react';
+import { Provider as StoreProvider } from 'react-redux';
+import configureStore from '../redux/configureStore';
+import Details from '../views/details/details';
+import './App.scss';
+import theme from './themes';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       minWidth: 800,
