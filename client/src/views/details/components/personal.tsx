@@ -1,5 +1,13 @@
-import { Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@material-ui/core';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import {
+  Avatar,
+  Box,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 import FaceIcon from '@material-ui/icons/Face';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SchoolIcon from '@material-ui/icons/School';
@@ -7,18 +15,16 @@ import TodayIcon from '@material-ui/icons/Today';
 import moment from 'moment';
 import React from 'react';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      color: '#eeeeee',
-      padding: 30,
-      // padding: '30px 20px',
-    },
-    avatarColor: {
-      backgroundColor: '#546e7a',
-    },
-  }),
-);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: '#eeeeee',
+    padding: 30,
+    // padding: '30px 20px',
+  },
+  avatarColor: {
+    backgroundColor: '#546e7a',
+  },
+}));
 
 const Personal: React.FC = () => {
   const classes = useStyles();

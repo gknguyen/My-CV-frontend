@@ -1,19 +1,16 @@
-import { Box } from '@material-ui/core';
-import { createStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { Box, makeStyles, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import { Provider as StoreProvider } from 'react-redux';
 import configureStore from '../redux/configureStore';
-import Details from '../views/details/details';
+import Profile from '../views/details/profile';
 import './App.scss';
 import theme from './themes';
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      minWidth: 800,
-    },
-  }),
-);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minWidth: 800,
+  },
+}));
 
 const App: React.FC = () => {
   const store = configureStore();
@@ -27,7 +24,7 @@ const App: React.FC = () => {
     <StoreProvider store={store}>
       <ThemeProvider theme={theme}>
         <Box className={classes.root}>
-          <Details />
+          <Profile />
         </Box>
       </ThemeProvider>
     </StoreProvider>

@@ -1,15 +1,12 @@
-import { Box, Typography } from '@material-ui/core';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Box, makeStyles, Typography } from '@material-ui/core';
 import MaterialTable from 'material-table';
 import React, { useState } from 'react';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      padding: 30,
-    },
-  }),
-);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: 30,
+  },
+}));
 
 const columnData = [
   { title: <strong>PRIOD</strong>, field: 'priod', width: 300, sorting: true },
@@ -66,8 +63,9 @@ const rowData = [
             <li>Working with AWS services (EC2, S3)</li>
             <li>Communicating in Japan with co-workers and clients</li>
             <li>
-              <b>Project management system</b> project (Node.js, React.js): employees and team management, create
-              projects and assign teams to handle, documents are upload and manage using Google Drive API.
+              <b>Project management system</b> project (Node.js, React.js): employees and team
+              management, create projects and assign teams to handle, documents are upload and
+              manage using Google Drive API.
             </li>
           </ul>
         </Typography>

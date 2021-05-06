@@ -1,18 +1,15 @@
-import { Box, Typography } from '@material-ui/core';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Box, makeStyles, Typography } from '@material-ui/core';
 import MaterialTable from 'material-table';
 import React, { useState } from 'react';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import IconButton from '@material-ui/core/IconButton';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      // marginTop: 200,
-      padding: 30,
-    },
-  }),
-);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    // marginTop: 200,
+    padding: 30,
+  },
+}));
 
 const columnData = [
   { title: <strong>PRIOD</strong>, field: 'priod', width: 300, sorting: true },
@@ -49,8 +46,8 @@ const rowData = [
           Personal project
           <ul>
             <li>
-              Have some features such as employees management, menu management, customer info management, add food to
-              cart and invoice receipts for customers, finance management
+              Have some features such as employees management, menu management, customer info
+              management, add food to cart and invoice receipts for customers, finance management
             </li>
             <li>Based on Java language with Spring MVC framework</li>
             <li>Using Bootstrap to build web client</li>
@@ -71,8 +68,8 @@ const rowData = [
           Freelance project
           <ul>
             <li>
-              An e-commercial web app which provides website templates for customers with many kinds of business aspect
-              such as food, clothes, electronic and enterprises.
+              An e-commercial web app which provides website templates for customers with many kinds
+              of business aspect such as food, clothes, electronic and enterprises.
             </li>
             <li>Based on PHP language with Laravel MVC framework</li>
             <li>Using Bootstrap to build web client</li>
@@ -112,7 +109,6 @@ const Project: React.FC = () => {
   const handleClick = () => {
     setIsPaging(!isPaging);
   };
-  console.log(data.length);
 
   return (
     <Box className={classes.root}>

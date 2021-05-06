@@ -1,59 +1,67 @@
-import { Avatar, Card, CardContent, CardHeader, CardMedia, Container, Grid, Link } from '@material-ui/core';
+import {
+  Avatar,
+  Card,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Container,
+  Grid,
+  Link,
+  makeStyles,
+} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import { savePDF } from '@progress/kendo-react-pdf';
 import React from 'react';
+import profile from '../../data/profile';
 import About from './components/about';
 import Contact from './components/contact';
 import Experience from './components/experience';
 import Personal from './components/personal';
 import Project from './components/project';
-import Skill from './components/skill';
+import Skill from './components/skill/skill';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    media: {
-      height: 0,
-      paddingTop: 160,
-    },
-    cardHeader: {
-      marginTop: -140,
-      marginBottom: -70,
-      paddingLeft: 90,
-      paddingRight: 90,
-      // marginTop: -150,
-      // marginBottom: 0,
-      // borderBottom: '1px solid black',
-    },
-    avatar: {
-      width: theme.spacing(25),
-      height: theme.spacing(25),
-      margin: 20,
-      border: '5px solid white',
-    },
-    personalInfo: {
-      background: 'linear-gradient(45deg, #01579b 40%, #29b6f6 80%)',
-    },
-    careerInfo: {},
-    cardFooter: {
-      borderTop: '1px solid black',
-      color: '#eeeeee',
-      backgroundColor: '#01579b',
-      height: 40,
-    },
-    printButton: {
-      borderBottom: '1px solid black',
-      padding: 10,
-      color: '#eeeeee',
-    },
-    avatarColor: {
-      backgroundColor: '#546e7a',
-    },
-  }),
-);
+const useStyles = makeStyles((theme) => ({
+  media: {
+    height: 0,
+    paddingTop: 160,
+  },
+  cardHeader: {
+    marginTop: -140,
+    marginBottom: -70,
+    paddingLeft: 90,
+    paddingRight: 90,
+    // marginTop: -150,
+    // marginBottom: 0,
+    // borderBottom: '1px solid black',
+  },
+  avatar: {
+    width: theme.spacing(25),
+    height: theme.spacing(25),
+    margin: 20,
+    border: '5px solid white',
+  },
+  personalInfo: {
+    background: 'linear-gradient(45deg, #01579b 40%, #29b6f6 80%)',
+  },
+  careerInfo: {},
+  cardFooter: {
+    borderTop: '1px solid black',
+    color: '#eeeeee',
+    backgroundColor: '#01579b',
+    height: 40,
+  },
+  printButton: {
+    borderBottom: '1px solid black',
+    padding: 10,
+    color: '#eeeeee',
+  },
+  avatarColor: {
+    backgroundColor: '#546e7a',
+  },
+}));
 
-const Details: React.FC = () => {
+const Profile: React.FC = () => {
   const classes = useStyles();
 
   const exportPDFWithMethod = () => {
@@ -96,7 +104,7 @@ const Details: React.FC = () => {
               <Container disableGutters style={{ wordBreak: 'break-all' }}>
                 <Personal />
                 <Contact />
-                <Skill />
+                <Skill profile={profile} />
               </Container>
             </Grid>
 
@@ -108,7 +116,14 @@ const Details: React.FC = () => {
               </Container>
             </Grid>
 
-            <Grid container item xs={12} className={classes.cardFooter} justify="center" alignItems="center">
+            <Grid
+              container
+              item
+              xs={12}
+              className={classes.cardFooter}
+              justify="center"
+              alignItems="center"
+            >
               Powered by{' '}
               <Link href="https://material-ui.com" target="_blank" color="inherit">
                 @Material-UI
@@ -121,4 +136,4 @@ const Details: React.FC = () => {
   );
 };
 
-export default Details;
+export default Profile;

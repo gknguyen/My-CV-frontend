@@ -1,5 +1,14 @@
-import { Avatar, Box, Link, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@material-ui/core';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import {
+  Avatar,
+  Box,
+  Link,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 import EmailIcon from '@material-ui/icons/Email';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -8,18 +17,16 @@ import React from 'react';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import MessageIcon from '@material-ui/icons/Message';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      color: '#eeeeee',
-      padding: 30,
-      // padding: '30px 20px',
-    },
-    avatarColor: {
-      backgroundColor: '#546e7a',
-    },
-  }),
-);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: '#eeeeee',
+    padding: 30,
+    // padding: '30px 20px',
+  },
+  avatarColor: {
+    backgroundColor: '#546e7a',
+  },
+}));
 
 const Contact: React.FC = () => {
   const classes = useStyles();
