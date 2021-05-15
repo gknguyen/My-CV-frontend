@@ -9,15 +9,12 @@ import {
   Link,
   makeStyles,
 } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import SaveAltIcon from '@material-ui/icons/SaveAlt';
-import { savePDF } from '@progress/kendo-react-pdf';
 import React from 'react';
 import profile from '../../data/profile';
 import About from './components/about';
-import Contact from './components/contact';
+import Contact from './components/contact/contact';
 import Experience from './components/experience';
-import Personal from './components/personal';
+import Personal from './components/personal/personal';
 import Project from './components/project';
 import Skill from './components/skill/skill';
 
@@ -27,13 +24,11 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 160,
   },
   cardHeader: {
-    marginTop: -140,
-    marginBottom: -70,
     paddingLeft: 90,
     paddingRight: 90,
-    // marginTop: -150,
-    // marginBottom: 0,
-    // borderBottom: '1px solid black',
+    marginTop: -150,
+    marginBottom: 0,
+    borderBottom: '1px solid black',
   },
   avatar: {
     width: theme.spacing(25),
@@ -44,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
   personalInfo: {
     background: 'linear-gradient(45deg, #01579b 40%, #29b6f6 80%)',
   },
-  careerInfo: {},
   cardFooter: {
     borderTop: '1px solid black',
     color: '#eeeeee',
@@ -64,20 +58,6 @@ const useStyles = makeStyles((theme) => ({
 const Profile: React.FC = () => {
   const classes = useStyles();
 
-  const exportPDFWithMethod = () => {
-    const input = document.getElementById('detail');
-    if (input) {
-      savePDF(input, {
-        fileName: `My-CV`,
-        author: 'Nguyen Truong Giang',
-        creator: 'Nguyen Truong Giang',
-        producer: 'Nguyen Truong Giang',
-        avoidLinks: true,
-        paperSize: 'auto',
-      });
-    }
-  };
-
   return (
     <Container disableGutters>
       <Card raised id="detail">
@@ -86,33 +66,27 @@ const Profile: React.FC = () => {
         <CardHeader
           className={classes.cardHeader}
           avatar={<Avatar src="/gk.jpg" className={classes.avatar} />}
-          title="Nguyen Truong Giang"
+          title={profile.name}
           titleTypographyProps={{ variant: 'h4' }}
-          subheader="Software Engineer (Node.js, React.js, AWS)"
+          subheader={profile.career}
           subheaderTypographyProps={{ variant: 'h5' }}
         />
-
-        <Grid container justify="flex-end" className={classes.printButton}>
-          <IconButton onClick={exportPDFWithMethod}>
-            <SaveAltIcon fontSize="large" />
-          </IconButton>
-        </Grid>
 
         <CardContent>
           <Grid container>
             <Grid container item xs={4} className={classes.personalInfo} direction="column">
               <Container disableGutters style={{ wordBreak: 'break-all' }}>
-                <Personal />
-                <Contact />
+                <Personal profile={profile} />
+                <Contact profile={profile} />
                 <Skill profile={profile} />
               </Container>
             </Grid>
 
-            <Grid container item xs={8} className={classes.careerInfo}>
+            <Grid container item xs={8}>
               <Container disableGutters>
-                <About />
-                <Experience />
-                <Project />
+                <About profile={profile} />
+                <Experience profile={profile} />
+                <Project profile={profile} />
               </Container>
             </Grid>
 

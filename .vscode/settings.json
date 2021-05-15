@@ -1,5 +1,7 @@
 {
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "files.autoSave": "onFocusChange",
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

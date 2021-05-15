@@ -26,3 +26,6 @@ yarn-error.log*
 
 #folders
 object-hash/
+
+#files
+.dccache

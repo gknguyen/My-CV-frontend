@@ -1,10 +1,9 @@
 import { Box, makeStyles, Typography } from '@material-ui/core';
 import MaterialTable from 'material-table';
-import React, { useState } from 'react';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import IconButton from '@material-ui/core/IconButton';
+import React from 'react';
+import { ProfileType } from '../../../data/profile';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     // marginTop: 200,
     padding: 30,
@@ -12,120 +11,71 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const columnData = [
-  { title: <strong>PRIOD</strong>, field: 'priod', width: 300, sorting: true },
-  { title: <strong>PROJECTS</strong>, field: 'projects', width: 1000, sorting: false },
-];
-
-const rowData = [
   {
-    priod: 'Sep 2017 – Jun 2018',
-    projects: (
-      <Box>
-        <Typography variant="h6" component="h2" display="block">
-          <strong>BUILD A GAS LEAKED MONITORING SYSTEM BASED ON WIRELESS NETWORKS</strong>
-        </Typography>
-        <Typography component="span">
-          Graduation project
-          <ul>
-            <li>Using Arduino for processor and Lora network</li>
-            <li>Studying C/C++ language as well as HTML, CSS, Javascript for client</li>
-            <li>Learning the knowledge of wireless sensor networks</li>
-          </ul>
-        </Typography>
-      </Box>
-    ),
+    title: <strong>PRIOD</strong>,
+    field: 'priod',
+    headerStyle: {
+      minWidth: 120,
+    },
+    cellStyle: {
+      minWidth: 120,
+    },
+    sorting: true,
   },
   {
-    priod: 'Jul 2019 – Dec 2019',
-    projects: (
-      <Box>
-        <Typography variant="h6" component="h2" display="block">
-          <strong>DEVELOP A WEB APPLICATION FOR MANAGING RESTAURANT</strong>
-        </Typography>
-        <Typography component="span">
-          Personal project
-          <ul>
-            <li>
-              Have some features such as employees management, menu management, customer info
-              management, add food to cart and invoice receipts for customers, finance management
-            </li>
-            <li>Based on Java language with Spring MVC framework</li>
-            <li>Using Bootstrap to build web client</li>
-            <li>Using MySQL for database</li>
-          </ul>
-        </Typography>
-      </Box>
-    ),
-  },
-  {
-    priod: 'Jun 2020 - Now',
-    projects: (
-      <Box>
-        <Typography variant="h6" component="h2" display="block">
-          <strong>SMARTVIETSOLUTION</strong>
-        </Typography>
-        <Typography component="span">
-          Freelance project
-          <ul>
-            <li>
-              An e-commercial web app which provides website templates for customers with many kinds
-              of business aspect such as food, clothes, electronic and enterprises.
-            </li>
-            <li>Based on PHP language with Laravel MVC framework</li>
-            <li>Using Bootstrap to build web client</li>
-            <li>Using MySQL for database</li>
-          </ul>
-        </Typography>
-      </Box>
-    ),
-  },
-  {
-    priod: 'Jul 2020 - Now',
-    projects: (
-      <Box>
-        <Typography variant="h6" component="h2" display="block">
-          <strong>MY CV TEMPLATE</strong>
-        </Typography>
-        <Typography component="span">
-          Personal project
-          <ul>
-            <li>Based on Typescript language with React.js framework</li>
-            <li>Use Material-UI for UI template</li>
-            <li>Public with AWS server</li>
-          </ul>
-        </Typography>
-      </Box>
-    ),
+    title: <strong>PROJECTS</strong>,
+    field: 'projects',
+    headerStyle: {
+      minWidth: 500,
+    },
+    cellStyle: {
+      minWidth: 500,
+    },
+    sorting: false,
   },
 ];
 
-const Project: React.FC = () => {
+interface Props {
+  profile: ProfileType;
+}
+
+const Project: React.FC<Props> = (props) => {
   const classes = useStyles();
 
-  const [columns, setColumns] = useState(columnData);
-  const [data, setData] = useState(rowData);
-  const [isPaging, setIsPaging] = useState(false);
-
-  const handleClick = () => {
-    setIsPaging(!isPaging);
-  };
+  const rowData = props.profile.projects.map((project, index) => {
+    return {
+      priod: project.period,
+      projects: (
+        <Box key={index}>
+          <Typography variant="h6" component="h2" display="block">
+            <strong>{project.title}</strong>
+          </Typography>
+          <Typography component="span">
+            {project.type}
+            <ul>
+              {project.descriptions.map((description, index) => (
+                <li key={index}>{description}</li>
+              ))}
+            </ul>
+          </Typography>
+        </Box>
+      ),
+    };
+  });
 
   return (
     <Box className={classes.root}>
       <Typography variant="h5" component="h2" display="block" gutterBottom>
-        <strong>PERSONAL PROJECTS</strong>{' '}
-        {/* <IconButton onClick={handleClick}>
-          <MenuBookIcon />
-        </IconButton> */}
+        <strong>PERSONAL PROJECTS</strong>
       </Typography>
 
       <MaterialTable
-        columns={columns}
-        data={data}
+        columns={columnData}
+        data={rowData}
         options={{
           draggable: false,
           toolbar: false,
-          paging: isPaging,
+          paging: false,
           pageSize: 3,
           pageSizeOptions: [3, 6, 9],
           headerStyle: {

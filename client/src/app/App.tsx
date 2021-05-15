@@ -6,7 +6,7 @@ import Profile from '../views/details/profile';
 import './App.scss';
 import theme from './themes';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     minWidth: 800,
   },

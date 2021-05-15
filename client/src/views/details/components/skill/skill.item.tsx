@@ -1,5 +1,6 @@
 import {
   Collapse,
+  Icon,
   List,
   ListItem,
   ListItemIcon,
@@ -10,7 +11,7 @@ import AddIcon from '@material-ui/icons/Add';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import React from 'react';
-import { Skill } from '../../../../data/profile';
+import { SkillType } from '../../../../data/profile';
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -25,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  skill: Skill;
+  skill: SkillType;
 }
 
-const Category: React.FC<Props> = (props) => {
+const SkillItem: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(true);
@@ -38,14 +39,20 @@ const Category: React.FC<Props> = (props) => {
   return (
     <>
       <ListItem button onClick={handleClick} className={classes.list}>
-        <ListItemIcon>{props.skill.image}</ListItemIcon>
-        <ListItemText primary="Languages" />
+        <ListItemIcon>
+          {/* {props.skill.image} */}
+          <Icon fontSize="large" className={classes.icon}>
+            {props.skill.image}
+          </Icon>
+        </ListItemIcon>
+        <ListItemText primary={props.skill.category} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
+
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {props.skill.list.map((item) => (
-            <ListItem className={classes.nested}>
+          {props.skill.list.map((item, index) => (
+            <ListItem key={index} className={classes.nested}>
               <ListItemIcon>
                 <AddIcon className={classes.icon} fontSize="large" />
               </ListItemIcon>
@@ -58,4 +65,4 @@ const Category: React.FC<Props> = (props) => {
   );
 };
 
-export default Category;
+export default SkillItem;

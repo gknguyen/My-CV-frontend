@@ -1,7 +1,7 @@
 import { Box, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import { Profile } from '../../../../data/profile';
-import Category from './category';
+import { ProfileType } from '../../../../data/profile';
+import SkillItem from './skill.item';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  profile: Profile;
+  profile: ProfileType;
 }
 
 const Skill: React.FC<Props> = (props) => {
@@ -34,8 +34,8 @@ const Skill: React.FC<Props> = (props) => {
         <strong>SKILLS</strong>
       </Typography>
 
-      {props.profile.skills.map((skill) => (
-        <Category skill={skill} />
+      {props.profile.skills.map((skill, index) => (
+        <SkillItem key={index} skill={skill} />
       ))}
     </Box>
   );
