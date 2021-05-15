@@ -184,7 +184,7 @@ const profile = {
         'The web version of my Curriculum Vitae (CV)',
         'Using React.js (Typescript) & Material-UI for Web platform',
         'Using Golang for server',
-        'Deploy in Heraku cloud server',
+        'Deploy in Heroku cloud server',
       ],
     },
     {
