@@ -15,9 +15,11 @@ const columnData = [
     title: <strong>PRIOD</strong>,
     field: 'priod',
     headerStyle: {
+      width: 180,
       minWidth: 120,
     },
     cellStyle: {
+      width: 180,
       minWidth: 120,
     },
     sorting: true,

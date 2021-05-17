@@ -3,22 +3,20 @@ import React from 'react';
 import { Provider as StoreProvider } from 'react-redux';
 import configureStore from '../redux/configureStore';
 import Profile from '../views/details/profile';
-import './App.scss';
 import theme from './themes';
 
 const useStyles = makeStyles(() => ({
   root: {
     minWidth: 800,
+    marginTop: '-35px',
+    marginBottom: '-55px',
   },
 }));
 
-const App: React.FC = () => {
-  const store = configureStore();
-  const classes = useStyles();
+const store = configureStore();
 
-  React.useEffect(() => {
-    document.title = "GK's CV";
-  }, []);
+const App: React.FC = () => {
+  const classes = useStyles();
 
   return (
     <StoreProvider store={store}>

@@ -2,20 +2,13 @@ import moment from 'moment';
 
 const profile = {
   name: 'Nguyen Truong Giang',
-  career: 'Software Engineer (Node.js, React.js, AWS)',
+  career: 'Software Engineer (3 years experience)',
 
-  about: `
-  Currently, i have 3 years experience in my career.
+  about: `My career path is to become an expert Full-stack programmer, who can create many high quality, secure and friendly products which can satify the expectation of customers.
 
-  My career path is to become an expert Full-stack programmer.
+I look forward to working with a professional team, where i can enjoy learning and sharing to help each other growth, practicing my skills so I can adapt well to the needs and flexible changes of the market.
 
-  I look forward to learning and working with the new technologies in the current 4.0
-  generation economy, practicing my skills so I can adapt well to the needs and flexible
-  changes of the market.
-
-  It would be great if I had the opportunity to work in an environment where English is the
-  key because I want to train my ability to communicate and work in English.
-  `,
+It would be great if I had the opportunity to work in an environment where English is the key point because I want to focus training my ability to communicate and work in English.`,
 
   personals: [
     {
@@ -79,19 +72,12 @@ const profile = {
     {
       category: 'Programming Languages',
       image: 'code',
-      list: ['Javascript, Typescript', 'Golang'],
+      list: ['Javascript (Typescript)', 'Golang'],
     },
     {
       category: 'Back-end',
       image: 'storage',
-      list: [
-        'Node.js, Express.js',
-        'MySQL, PostgreSQL',
-        'MongoDB',
-        'Redis',
-        'Docker',
-        'Electron.js',
-      ],
+      list: ['Node.js, Express.js', 'MySQL, PostgreSQL, MongoDB', 'Redis', 'Docker', 'Electron.js'],
     },
     {
       category: 'Front-end',
@@ -130,6 +116,17 @@ const profile = {
         'Working with backend systems based on COBOL language',
         'Communicating in French with co-workers and clients',
       ],
+      projects: [
+        {
+          name: 'AXAPAC',
+          position: 'Developer',
+          descriptions: [
+            "Customer data processing, Contract's fee calculation",
+            'Technologies : Cobol, IMS mainframe',
+            'Resource : more than 50 members',
+          ],
+        },
+      ],
     },
     {
       period: 'Feb 2020 - Now',
@@ -139,6 +136,30 @@ const profile = {
         'Providing IT solutions for GEO corporation in Japan',
         'Handling full life cycle of projects - from Front-end, Back-end to deployment',
         'communicating in Japan with co-workers and clients',
+      ],
+      projects: [
+        {
+          name: 'Task Management System',
+          position: 'Developer',
+          descriptions: [
+            'Task management, employee management, man-hours management',
+            'Web Application',
+            'Technologies : React.js + Express.js',
+            'Resource : 4 members',
+            'Period : 1 year',
+          ],
+        },
+        {
+          name: "Purchased Product's status Finder",
+          position: 'Team Leader',
+          descriptions: [
+            "Research Purchased Product's status, generate logs in server, auto checking update",
+            'Desktop Application',
+            'Technologies : Electron.js + React.js',
+            'Resource : 2 members',
+            'Period : 3 months',
+          ],
+        },
       ],
     },
   ],

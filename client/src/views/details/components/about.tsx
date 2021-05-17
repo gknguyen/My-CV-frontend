@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 30,
   },
   lineBreak: {
-    lineBreak: 'normal',
+    // lineBreak: 'normal',
   },
 }));
 
@@ -23,7 +23,9 @@ const About: React.FC<Props> = (props) => {
       <Typography variant="h5" component="h2" display="block" gutterBottom>
         <strong>ABOUT</strong>
       </Typography>
-      <Typography className={classes.lineBreak}>{props.profile.about}</Typography>
+      <Typography variant="h6" className={classes.lineBreak}>
+        {props.profile.about}
+      </Typography>
     </Box>
   );
 };
