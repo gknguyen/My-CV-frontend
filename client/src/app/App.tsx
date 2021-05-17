@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider as StoreProvider } from 'react-redux';
 import configureStore from '../redux/configureStore';
 import Profile from '../views/details/profile';
-import theme from './themes';
+import { theme } from './style';
 
 const useStyles = makeStyles(() => ({
   root: {

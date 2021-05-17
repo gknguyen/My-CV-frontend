@@ -1,6 +1,17 @@
-import { Box, makeStyles, Typography } from '@material-ui/core';
-import MaterialTable from 'material-table';
+import {
+  Box,
+  makeStyles,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from '@material-ui/core';
 import React from 'react';
+import { useCommonStyles } from '../../../app/style';
 import { ProfileType } from '../../../data/profile';
 
 const useStyles = makeStyles(() => ({
@@ -10,60 +21,13 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const columnData = [
-  {
-    title: <strong>PRIOD</strong>,
-    field: 'priod',
-    headerStyle: {
-      width: 180,
-      minWidth: 120,
-    },
-    cellStyle: {
-      width: 180,
-      minWidth: 120,
-    },
-    sorting: true,
-  },
-  {
-    title: <strong>PROJECTS</strong>,
-    field: 'projects',
-    headerStyle: {
-      minWidth: 500,
-    },
-    cellStyle: {
-      minWidth: 500,
-    },
-    sorting: false,
-  },
-];
-
 interface Props {
   profile: ProfileType;
 }
 
 const Project: React.FC<Props> = (props) => {
   const classes = useStyles();
-
-  const rowData = props.profile.projects.map((project, index) => {
-    return {
-      priod: project.period,
-      projects: (
-        <Box key={index}>
-          <Typography variant="h6" component="h2" display="block">
-            <strong>{project.title}</strong>
-          </Typography>
-          <Typography component="span">
-            {project.type}
-            <ul>
-              {project.descriptions.map((description, index) => (
-                <li key={index}>{description}</li>
-              ))}
-            </ul>
-          </Typography>
-        </Box>
-      ),
-    };
-  });
+  const commonClasses = useCommonStyles();
 
   return (
     <Box className={classes.root}>
@@ -71,21 +35,47 @@ const Project: React.FC<Props> = (props) => {
         <strong>PERSONAL PROJECTS</strong>
       </Typography>
 
-      <MaterialTable
-        columns={columnData}
-        data={rowData}
-        options={{
-          draggable: false,
-          toolbar: false,
-          paging: false,
-          pageSize: 3,
-          pageSizeOptions: [3, 6, 9],
-          headerStyle: {
-            backgroundColor: '#29b6f6',
-            color: '#eeeeee',
-          },
-        }}
-      />
+      <TableContainer component={Paper}>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell className={commonClasses.tableHeader}>
+                <Typography>
+                  <strong>PRIOD</strong>
+                </Typography>
+              </TableCell>
+              <TableCell className={commonClasses.tableHeader}>
+                <Typography>
+                  <strong>PROJECTS</strong>
+                </Typography>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+            {props.profile.projects.map((project, index) => (
+              <TableRow key={index}>
+                <TableCell style={{ width: 90 }}>
+                  <Typography>{project.period}</Typography>
+                </TableCell>
+                <TableCell>
+                  <Typography variant="h6" component="h2" display="block">
+                    <strong>{project.title}</strong>
+                  </Typography>
+                  <Typography component="span">
+                    {project.type}
+                    <ul>
+                      {project.descriptions.map((description, index) => (
+                        <li key={index}>{description}</li>
+                      ))}
+                    </ul>
+                  </Typography>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Box>
   );
 };
