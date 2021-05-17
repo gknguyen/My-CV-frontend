@@ -1,1 +1,1 @@
-web: go run ./server
+web: bin/go-getting-started
